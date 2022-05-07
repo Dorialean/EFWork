@@ -1,0 +1,1 @@
+Scaffold-DbContext "Server=DIMINCOMP\SQLEXPRESS;Database=[macdonaldsWork];Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
