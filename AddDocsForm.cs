@@ -19,7 +19,7 @@ namespace EFWork
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(PasportIdTextBox.Text) 
+            if (!string.IsNullOrEmpty(PasportIdTextBox.Text)
                 && !string.IsNullOrEmpty(EmpHistoryIdTextBox.Text)
                 && !string.IsNullOrEmpty(MedicalBookIdTextBox.Text)
                 && !string.IsNullOrEmpty(SnilsTextBox.Text)
@@ -38,7 +38,10 @@ namespace EFWork
                     });
                     db.SaveChanges();
                 }
+                MessageBox.Show("Данные успешно сохранены!");
             }
+            else
+                MessageBox.Show("Данные были введены неверно!");
         }
     }
 }

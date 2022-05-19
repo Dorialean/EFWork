@@ -15,6 +15,10 @@ namespace EFWork
         public AddEmployesForm()
         {
             InitializeComponent();
+            using (Models.macdonaldsWorkContext db = new Models.macdonaldsWorkContext())
+            {
+                postComboBox.DataSource = db.Posts.Select(x => x.JobTitle).ToList();
+            }
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -25,12 +29,12 @@ namespace EFWork
                 && !string.IsNullOrEmpty(AgeTextBox.Text)
                 && !string.IsNullOrEmpty(AgeTextBox.Text)
                 && !string.IsNullOrEmpty(DateOfPromotionPicker.Text)
-                && (radioButton1.Checked 
-                || radioButton2.Checked 
-                || radioButton3.Checked 
-                || radioButton4.Checked 
-                || radioButton5.Checked 
-                || radioButton6.Checked 
+                && (radioButton1.Checked
+                || radioButton2.Checked
+                || radioButton3.Checked
+                || radioButton4.Checked
+                || radioButton5.Checked
+                || radioButton6.Checked
                 || radioButton7.Checked))
             {
                 using (Models.macdonaldsWorkContext db = new Models.macdonaldsWorkContext())
@@ -54,11 +58,14 @@ namespace EFWork
                         SizeOfClothes = sizeOfClothes,
                         DateOfPromotion = DateOfPromotionPicker.Value,
                         DocumentsPack = db.Documents.Single(d => d.DocumentsPackId == db.Employees.Count()),
-                        Post = db.Posts.Single(p => p.Id == db.Employees.Count())
+                        Post = db.Posts.First(x => x.JobTitle == postComboBox.SelectedValue.ToString())
                     });
                     db.SaveChanges();
                 }
+                MessageBox.Show("Данные успешно сохранены!");
             }
+            else
+                MessageBox.Show("Были введены неверные данные!");
         }
     }
 }

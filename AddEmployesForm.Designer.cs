@@ -47,6 +47,8 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.postComboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -54,62 +56,62 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(73, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.Size = new System.Drawing.Size(146, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Employee Name";
+            this.label1.Text = "Имя сотрудника";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 51);
+            this.label2.Location = new System.Drawing.Point(31, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 25);
+            this.label2.Size = new System.Drawing.Size(184, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Employee Surname";
+            this.label2.Text = "Фамилия сотрудника";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(24, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 25);
+            this.label3.Size = new System.Drawing.Size(187, 25);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Employee Father Name";
+            this.label3.Text = "Отчество сотрудника";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(171, 125);
+            this.label4.Location = new System.Drawing.Point(135, 125);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 25);
+            this.label4.Size = new System.Drawing.Size(76, 25);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Age";
+            this.label4.Text = "Возраст";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(86, 162);
+            this.label5.Location = new System.Drawing.Point(76, 162);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 25);
+            this.label5.Size = new System.Drawing.Size(143, 25);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Size of Clothes";
+            this.label5.Text = "Размер одежды";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(51, 197);
+            this.label6.Location = new System.Drawing.Point(12, 197);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 25);
+            this.label6.Size = new System.Drawing.Size(252, 25);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Date Of Promotion";
+            this.label6.Text = "День последнего повышения";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(498, 239);
+            this.button1.Location = new System.Drawing.Point(574, 284);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 40);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Save";
+            this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Save_Click);
             // 
@@ -143,7 +145,7 @@
             // 
             // DateOfPromotionPicker
             // 
-            this.DateOfPromotionPicker.Location = new System.Drawing.Point(225, 197);
+            this.DateOfPromotionPicker.Location = new System.Drawing.Point(270, 192);
             this.DateOfPromotionPicker.Name = "DateOfPromotionPicker";
             this.DateOfPromotionPicker.Size = new System.Drawing.Size(200, 31);
             this.DateOfPromotionPicker.TabIndex = 13;
@@ -218,11 +220,30 @@
             this.radioButton7.Text = "XXS";
             this.radioButton7.UseVisualStyleBackColor = true;
             // 
+            // postComboBox
+            // 
+            this.postComboBox.FormattingEnabled = true;
+            this.postComboBox.Location = new System.Drawing.Point(225, 245);
+            this.postComboBox.Name = "postComboBox";
+            this.postComboBox.Size = new System.Drawing.Size(448, 33);
+            this.postComboBox.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(113, 248);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 25);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Должность";
+            // 
             // AddEmployesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 297);
+            this.ClientSize = new System.Drawing.Size(685, 335);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.postComboBox);
             this.Controls.Add(this.radioButton7);
             this.Controls.Add(this.radioButton6);
             this.Controls.Add(this.radioButton5);
@@ -270,5 +291,7 @@
         private RadioButton radioButton5;
         private RadioButton radioButton6;
         private RadioButton radioButton7;
+        private ComboBox postComboBox;
+        private Label label7;
     }
 }
