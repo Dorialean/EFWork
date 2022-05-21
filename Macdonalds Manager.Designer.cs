@@ -48,9 +48,10 @@
             this.showDocsButton = new System.Windows.Forms.Button();
             this.postLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.addEmployeeButton = new System.Windows.Forms.Button();
             this.prevButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
-            this.addEmployeeButton = new System.Windows.Forms.Button();
+            this.dateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeePicBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -136,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(267, 175);
+            this.label6.Location = new System.Drawing.Point(239, 211);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(249, 25);
             this.label6.TabIndex = 11;
@@ -199,7 +200,7 @@
             // sizeOfClothesLabel
             // 
             this.sizeOfClothesLabel.AutoSize = true;
-            this.sizeOfClothesLabel.Location = new System.Drawing.Point(576, 198);
+            this.sizeOfClothesLabel.Location = new System.Drawing.Point(571, 187);
             this.sizeOfClothesLabel.Name = "sizeOfClothesLabel";
             this.sizeOfClothesLabel.Size = new System.Drawing.Size(75, 25);
             this.sizeOfClothesLabel.TabIndex = 18;
@@ -227,7 +228,7 @@
             // postLabel
             // 
             this.postLabel.AutoSize = true;
-            this.postLabel.Location = new System.Drawing.Point(604, 341);
+            this.postLabel.Location = new System.Drawing.Point(575, 341);
             this.postLabel.Name = "postLabel";
             this.postLabel.Size = new System.Drawing.Size(75, 25);
             this.postLabel.TabIndex = 21;
@@ -235,6 +236,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateLabel);
             this.groupBox1.Controls.Add(this.addEmployeeButton);
             this.groupBox1.Controls.Add(this.prevButton);
             this.groupBox1.Controls.Add(this.nextButton);
@@ -261,6 +263,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cотрудник";
             // 
+            // addEmployeeButton
+            // 
+            this.addEmployeeButton.Location = new System.Drawing.Point(283, 400);
+            this.addEmployeeButton.Name = "addEmployeeButton";
+            this.addEmployeeButton.Size = new System.Drawing.Size(192, 60);
+            this.addEmployeeButton.TabIndex = 24;
+            this.addEmployeeButton.Text = "Добавить нового сотрудника";
+            this.addEmployeeButton.UseVisualStyleBackColor = true;
+            this.addEmployeeButton.Click += new System.EventHandler(this.addEmployeeButton_Click);
+            // 
             // prevButton
             // 
             this.prevButton.Location = new System.Drawing.Point(6, 400);
@@ -281,15 +293,14 @@
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
-            // addEmployeeButton
+            // dateLabel
             // 
-            this.addEmployeeButton.Location = new System.Drawing.Point(283, 400);
-            this.addEmployeeButton.Name = "addEmployeeButton";
-            this.addEmployeeButton.Size = new System.Drawing.Size(192, 60);
-            this.addEmployeeButton.TabIndex = 24;
-            this.addEmployeeButton.Text = "Добавить нового сотрудника";
-            this.addEmployeeButton.UseVisualStyleBackColor = true;
-            this.addEmployeeButton.Click += new System.EventHandler(this.addEmployeeButton_Click);
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(577, 225);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(75, 25);
+            this.dateLabel.TabIndex = 25;
+            this.dateLabel.Text = "Данные";
             // 
             // Form1
             // 
@@ -338,5 +349,6 @@
         private Button prevButton;
         private Button nextButton;
         private Button addEmployeeButton;
+        private Label dateLabel;
     }
 }

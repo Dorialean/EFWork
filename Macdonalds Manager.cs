@@ -20,7 +20,7 @@ namespace EFWork
             fatherNameLabel.Text = employees[0].FatherName.ToString();
             ageLabel.Text = employees[0].Age.ToString();
             sizeOfClothesLabel.Text = employees[0].SizeOfClothes.ToString();
-            dateOfPromotionLabel.Text = employees[0].DateOfPromotion.ToString();
+            dateLabel.Text = employees[0].DateOfPromotion.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace EFWork
             fatherNameLabel.Text = employees[0].FatherName.ToString();
             ageLabel.Text = employees[0].Age.ToString();
             sizeOfClothesLabel.Text = employees[0].SizeOfClothes.ToString();
-            dateOfPromotionLabel.Text = employees[0].DateOfPromotion.ToString();
+            dateLabel.Text = employees[0].DateOfPromotion.ToString();
         }
 
         private void AddEmployeeButtonClick(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace EFWork
             {
                 Models.Employee? emp = db.Employees.Find(employees.First(x=> x.Name == nameLabel.Text 
                 && x.Surname == surnameLabel.Text
-                && x.DateOfPromotion == DateTime.Parse(dateOfPromotionLabel.Text)
+                && x.DateOfPromotion == DateTime.Parse(dateLabel.Text)
                 && x.Age == int.Parse(ageLabel.Text)
                 && x.SizeOfClothes == sizeOfClothesLabel.Text).TableNumberId);
                 docId = (int)emp.DocumentsPackId; 
@@ -78,7 +78,7 @@ namespace EFWork
             {
                 empId = db.Employees.Find(db.Employees.First(x => x.Name == nameLabel.Text
                                 && x.Surname == surnameLabel.Text
-                                && x.DateOfPromotion == DateTime.Parse(dateOfPromotionLabel.Text)
+                                && x.DateOfPromotion == DateTime.Parse(dateLabel.Text)
                                 && x.Age == int.Parse(ageLabel.Text)
                                 && x.SizeOfClothes == sizeOfClothesLabel.Text).TableNumberId).TableNumberId;
             }
@@ -90,7 +90,7 @@ namespace EFWork
                 fatherNameLabel.Text = employees[thisEmp - 1].FatherName.ToString();
                 ageLabel.Text = employees[thisEmp - 1].Age.ToString();
                 sizeOfClothesLabel.Text = employees[thisEmp - 1].SizeOfClothes.ToString();
-                dateOfPromotionLabel.Text = employees[thisEmp - 1].DateOfPromotion.ToString();
+                dateLabel.Text = employees[thisEmp - 1].DateOfPromotion.ToString();
             }
             else
                 MessageBox.Show("Это первый сотрудник, перед ним никого нет!");
@@ -103,7 +103,7 @@ namespace EFWork
             {
                 empId = db.Employees.Find(db.Employees.First(x => x.Name == nameLabel.Text
                                 && x.Surname == surnameLabel.Text
-                                && x.DateOfPromotion == DateTime.Parse(dateOfPromotionLabel.Text)
+                                && x.DateOfPromotion == DateTime.Parse(dateLabel.Text)
                                 && x.Age == int.Parse(ageLabel.Text)
                                 && x.SizeOfClothes == sizeOfClothesLabel.Text).TableNumberId).TableNumberId;
             }
@@ -115,7 +115,7 @@ namespace EFWork
                 fatherNameLabel.Text = employees[thisEmp + 1].FatherName.ToString();
                 ageLabel.Text = employees[thisEmp + 1].Age.ToString();
                 sizeOfClothesLabel.Text = employees[thisEmp + 1].SizeOfClothes.ToString();
-                dateOfPromotionLabel.Text = employees[thisEmp + 1].DateOfPromotion.ToString();
+                dateLabel.Text = employees[thisEmp + 1].DateOfPromotion.ToString();
             }
             else
                 MessageBox.Show("Это последний сотрудник, после него никого нет!");
