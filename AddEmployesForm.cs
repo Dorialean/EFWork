@@ -18,6 +18,7 @@ namespace EFWork
             using (Models.macdonaldsWorkContext db = new Models.macdonaldsWorkContext())
             {
                 postComboBox.DataSource = db.Posts.Select(x => x.JobTitle).ToList();
+                documentsComboBox.DataSource = db.Documents.Select(x => x.DocumentsPackId).ToList();
             }
         }
 
@@ -57,7 +58,7 @@ namespace EFWork
                         Age = int.Parse(AgeTextBox.Text),
                         SizeOfClothes = sizeOfClothes,
                         DateOfPromotion = DateOfPromotionPicker.Value,
-                        DocumentsPack = db.Documents.Single(d => d.DocumentsPackId == db.Employees.Count()),
+                        DocumentsPack = db.Documents.First(d => d.DocumentsPackId == int.Parse(documentsComboBox.SelectedValue.ToString())),
                         Post = db.Posts.First(x => x.JobTitle == postComboBox.SelectedValue.ToString())
                     });
                     db.SaveChanges();

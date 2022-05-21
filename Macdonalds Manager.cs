@@ -32,10 +32,13 @@ namespace EFWork
         {
             using (Models.macdonaldsWorkContext db = new Models.macdonaldsWorkContext())
             {
+                List<Models.Employee> newEmployees = new List<Models.Employee>();
                 foreach (var emp in db.Employees)
                 {
-                    employees.Add(emp);
+                    newEmployees.Add(emp);
                 }
+                employees.Clear();
+                employees = new List<Models.Employee>(newEmployees);
                 postLabel.Text = db.Posts.Find(employees[0].PostId).JobTitle.ToString();
             }
             nameLabel.Text = employees[0].Name.ToString();

@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFWork.Models
 {
     public partial class Employee
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TableNumberId { get; set; }
         public string Name { get; set; } = null!;
         public string Surname { get; set; } = null!;
